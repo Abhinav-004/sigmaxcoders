@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bicycle Rental</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #cccccc, #9fbff5);
+        }
+        .navbar {
+            background-color: #f0f0f0;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            padding: 14px 20px;
+            text-align: center;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            border-radius: 5px;
+        }
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .ride-history {
+            text-align: left;
+            margin: 50px auto;
+            width: 60%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .ride-history h2 {
+            text-align: center;
+        }
+        .pickup-btn {
+            display: inline-block;
+            background-color: #d1c58f;
+            padding: 20px 40px;
+            font-size: 18px;
+            color: black;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .pickup-btn:hover {
+            background-color: #bcae71;
+        }
+        .bicycle-image {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            opacity: 0.8;
+            max-width: 30%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Wallet</a>
+        <a href="#">Profile</a>
+        <a href="#">Settings</a>
+    </div>
+
+    <div class="container">
+        <div class="ride-history">
+            <h2>Ride History</h2>
+            <p>1. Picked from PRP, dropped at Library on 25th June at 16:06PM</p>
+            <p>2. Picked from SJT, dropped at Library on 27th June at 12:05PM</p>
+            <p>3. Picked from SJT, dropped at PRP on 29th June at 2:35PM</p>
+            <p>4. Last Picked from SJT, dropped at K block Parking on 30th June at 12:05PM</p>
+        </div>
+
+        <a class="pickup-btn" href="#">Pick Up</a>
+    </div>
+
+    <img class="bicycle-image" src="your-bicycle-image-url-here" alt="Bicycle">
+
+</body>
+</html>
