@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cycle Rental - Sign Up / Sign In</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e0f7fa; /* Light blue */
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://example.com/bike-bg.jpg'); /* Replace with your background image */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2em;
+            color: #2c3e50; /* Dark text */
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input[type="text"], input[type="password"], input[type="email"] {
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        input[type="submit"] {
+            background-color: #27ae60; /* Green */
+            color: white;
+            padding: 15px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1em;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2ecc71; /* Lighter green */
+        }
+
+        .toggle-link {
+            text-align: center;
+            margin-top: 10px;
+            cursor: pointer;
+            color: #2980b9; /* Bright blue */
+            text-decoration: none;
+        }
+
+        .toggle-link:hover {
+            color: #3498db; /* Lighter blue */
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            width: 80px;
+        }
+
+        .container::before {
+            content: '';
+            background: url('https://example.com/cycle-icon.png'); /* Replace with your logo */
+            position: absolute;
+            top: -40px;
+            width: 80px;
+            height: 80px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+                width: 90%;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            input[type="submit"] {
+                font-size: 1em;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sign In Form -->
+        <div id="signin">
+            <div class="logo">
+                <img src="https://example.com/cycle-logo.png" alt="Cycle Logo"> <!-- Replace with your logo -->
+            </div>
+            <h2>Sign In</h2>
+            <form action="signin.php" method="post">
+                <input type="text" placeholder="Username" name="username" required>
+                <input type="password" placeholder="Password" name="password" required>
+                <input type="submit" value="Sign In">
+            </form>
+            <div class="toggle-link" onclick="toggleForms()">Don't have an account? Sign Up</div>
+        </div>
+
+        <!-- Sign Up Form -->
+        <div id="signup" style="display: none;">
+            <div class="logo">
+                <img src="https://example.com/cycle-logo.png" alt="Cycle Logo"> <!-- Replace with your logo -->
+            </div>
+            <h2>Sign Up</h2>
+            <form action="signup.php" method="post">
+                <input type="text" placeholder="Username" name="username" required>
+                <input type="email" placeholder="Email" name="email" required>
+                <input type="password" placeholder="Password" name="password" required>
+                <input type="submit" value="Sign Up">
+            </form>
+            <div class="toggle-link" onclick="toggleForms()">Already have an account? Sign In</div>
+        </div>
+    </div>
+
+    <script>
+        function toggleForms() {
+            const signinForm = document.getElementById('signin');
+            const signupForm = document.getElementById('signup');
+            if (signinForm.style.display === 'none') {
+                signinForm.style.display = 'block';
+                signupForm.style.display = 'none';
+            } else {
+                signinForm.style.display = 'none';
+                signupForm.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
